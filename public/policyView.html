@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html ng-app="ShoppingApp">
+    <head>
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-resource.min.js"></script>
+        <script src="js/ngStorage.min.js"></script>
+        <script src="js/shopping.js"></script>
+        <title>Policy</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/StyleSheet.css">
+    </head>
+    <body ng-controller="PolicytController as polCtrl" >
+
+        <h1>Policy</h1>
+        <div ng-include="'menu.html'" ></div>
+        <p>name :{{polCtrl.getPolicy().name}}<br>
+            party :{{polCtrl.getPolicy().party.name}}<br>
+            policy details :{{polCtrl.getPolicy().text}}<br>
+            tags :<var ng-repeat="tag in polCtrl.getPolicy().tags">{{tag.name}} </var><br>
+            website <br>
+            date :{{polCtrl.getPolicy().date}}</p>
+
+
+    </body>
+</html>

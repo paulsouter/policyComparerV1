@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="ShoppingApp">
+    <head>
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-resource.min.js"></script>
+        <script src="js/ngStorage.min.js"></script>
+        <script src="js/shopping.js"></script>
+        <title>Parties</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/StyleSheet.css">
+    </head>
+    <body ng-controller="PartyController as partCtrl" >
+
+        <h1>Parties</h1>
+        <div ng-include="'menu.html'" ></div>
+        <button ng-click="partCtrl.getParties()" >All</button>
+        <table>
+            <tr>
+                <th>Party name</th>
+                <th>website</th>
+            </tr>
+            <tbody>
+                <tr ng-repeat="party in partCtrl.parties">
+                    <td>{{party.name}}</td>
+                    <td><a href={{party.website}}>{{party.website}}</a></td>
+                    <!--<td><button ng-click="partCtrl.getParty({{party.website}})">to {{party.name}} </button></td>-->
+
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+</html>
